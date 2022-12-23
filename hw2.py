@@ -4,6 +4,21 @@ import matplotlib.pyplot as plt  # data visualization library
 from sklearn import datasets
 from sklearn.datasets import fetch_olivetti_faces
 from sklearn.decomposition import PCA
+#Q4
+
+def truncated_svd(matrix, rank):
+    U, s, Vt = svds(matrix, k=rank)
+    U = U[:, :rank]
+    s = np.diag(s[:rank])
+    Vt = Vt[:rank, :]
+    svd_matrix = np.dot(np.dot(U, s), Vt)
+
+    return svd_matrix
+
+
+svd_matrix = truncated_svd(array, 5)
+
+
 # Q5
 def IMPUTESVD(D, IdNA, r):
     for _ in range(20):

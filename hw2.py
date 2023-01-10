@@ -121,15 +121,16 @@ def IMPUTESVD(D, IdNA, r):
 
 
 data15 = IMPUTESVD(df_D, Id_NA, 15)
-
+# a
 a = data15.loc["1", "1556"]
+# b
 b1 = data15.loc["91", "2858"]
 b2 = data15.loc["91", "1732"]
-
+# c
 column_means = data15.mean()
 column_means_df = pd.DataFrame(column_means)
 c = column_means_df.loc["5313"]
-
+# d
 data5 = IMPUTESVD(df_D, Id_NA, 5)
 data20 = IMPUTESVD(df_D, Id_NA, 20)
 data30 = IMPUTESVD(df_D, Id_NA, 30)

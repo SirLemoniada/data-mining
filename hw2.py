@@ -120,8 +120,38 @@ def IMPUTESVD(D, IdNA, r):
     return D
 
 
-ans = IMPUTESVD(df_D, Id_NA, 15)
-mask1 = ans.lt(1)
-mask2 = ans.gt(4)
-count = (mask1 | mask2).sum().sum()
-count
+data15 = IMPUTESVD(df_D, Id_NA, 15)
+
+a = data15.loc["1", "1556"]
+b1 = data15.loc["91", "2858"]
+b2 = data15.loc["91", "1732"]
+
+column_means = data15.mean()
+column_means_df = pd.DataFrame(column_means)
+c = column_means_df.loc["5313"]
+
+data5 = IMPUTESVD(df_D, Id_NA, 5)
+data20 = IMPUTESVD(df_D, Id_NA, 20)
+data30 = IMPUTESVD(df_D, Id_NA, 30)
+
+mask5 = (data5 <= 1) | (data5 >= 4)
+mask15 = (data15 <= 1) | (data15 >= 4)
+mask20 = (data20 <= 1) | (data20 >= 4)
+mask30 = (data30 <= 1) | (data30 >= 4)
+
+mask15 = data5.lt(1)
+mask25 = data5.gt(4)
+
+mask115 = data15.lt(1)
+mask215 = data15.gt(4)
+
+mask120 = data20.lt(1)
+mask220 = data20.gt(4)
+
+mask130 = data30.lt(1)
+mask230 = data30.gt(4)
+
+count5 = (mask15 | mask25).sum().sum()
+count15 = (mask115 | mask215).sum().sum()
+count20 = (mask120 | mask220).sum().sum()
+count30 = (mask130 | mask230).sum().sum()

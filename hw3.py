@@ -1,5 +1,5 @@
 # Q1a) b
-# Q1b)
+# Q1b)0.95
 
 from sklearn.metrics import normalized_mutual_info_score
 

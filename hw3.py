@@ -1,4 +1,4 @@
-# Q1a) b
+# Q1a)A-Correct, B-Wrong, C-Correct, D-Correct
 # Q1b)0.95
 
 from sklearn.metrics import normalized_mutual_info_score
